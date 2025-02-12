@@ -39,7 +39,7 @@ CC_COLORS = (
 # If new_size is provided, image will be resized before conversion.
 # new_size should be a 2-tuple: (width, height).
 # Recommended size for CC monitors at text scale 0.5 is (164, 81).
-def img_to_nfp(im, new_size=None, dither=0):
+def img_to_nfp(im, new_size=None, dither=Image.Dither.FLOYDSTEINBERG):
     if new_size:
         im = im.resize(new_size)
     # A technique called image quantization is used to reduce the input image's
