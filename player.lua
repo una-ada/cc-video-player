@@ -3,8 +3,10 @@ local dfpwm = require("cc.audio.dfpwm")
 local speaker = peripheral.find("speaker")
 local monitor = peripheral.find("monitor")
 
-local videoFile = "/video.nfv"
-local audioFile = "/audio.dfpwm"
+local path = fs.getDir(shell.getRunningProgram())
+
+local videoFile = fs.combine(path, "video.nfv")
+local audioFile = fs.combine(path, "audio.dfpwm")
 
 local videoData = {}
 for line in io.lines(videoFile) do
