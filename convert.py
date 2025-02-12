@@ -14,11 +14,11 @@ if __name__ == "__main__":
     cap = cv2.VideoCapture(video)
 
     # Convert audio to dfpwm
-    data = ffmpeg.input(video).output("pipe:1", format='wav').run(capture_stdout=True, capture_stderr=True)[0]
-    data, samplerate = sf.read(io.BytesIO(data))
-    audio_data = dfpwm.convert_audio(data, samplerate)
-    with open('audio.dfpwm', 'wb') as f:
-        f.write(audio_data.getvalue())
+    # data = ffmpeg.input(video).output("pipe:1", format='wav').run(capture_stdout=True, capture_stderr=True)[0]
+    # data, samplerate = sf.read(io.BytesIO(data))
+    # audio_data = dfpwm.convert_audio(data, samplerate)
+    # with open('audio.dfpwm', 'wb') as f:
+    #     f.write(audio_data.getvalue())
 
     # Calculate frame skip
     original_fps = cap.get(cv2.CAP_PROP_FPS)
