@@ -34,6 +34,7 @@ function nextFrame()
     end
 
     paintutils.drawImage(frame, 1, 1)
+    -- Calculates the draw time then rounds up to the nearest tick
     local comp = math.ceil((os.epoch("utc") - start)/50)/20
     os.sleep((1 / fps) - comp)
     return true
