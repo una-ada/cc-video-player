@@ -19,6 +19,7 @@ table.remove(videoData, 1)
 
 local frameIndex = 2
 function nextFrame()
+    local start = os.epoch("utc")
     local frame = {}
     for i = 1, resolution[2] do
         if frameIndex + i > #videoData then
@@ -33,7 +34,8 @@ function nextFrame()
     end
 
     paintutils.drawImage(frame, 1, 1)
-    os.sleep(1 / fps)
+    local comp = math.ceil((os.epoch("utc") - start)/50)/20
+    os.sleep((1 / fps) - comp)
     return true
 end
 
