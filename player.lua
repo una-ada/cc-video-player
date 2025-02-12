@@ -37,7 +37,7 @@ function nextFrame()
     return true
 end
 
-monitor.setTextScale(1)
+monitor.setTextScale(0.5)
 term.redirect(monitor)
 
 function audioLoop()
